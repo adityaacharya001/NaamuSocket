@@ -14,7 +14,7 @@ server.listen(port, () => console.log(`Listening on port ${port}`));
 const getApiAndEmit = async socket => {
     try {
         const res = await axios.get(
-            "http://localhost:4000/forms"
+            "https://secure-depths-88479.herokuapp.com/forms"
         ); // Getting the data from DarkSky
         socket.emit("FromAPI", res.data); // Emitting a new message. It will be consumed by the client
     } catch (error) {
