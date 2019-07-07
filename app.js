@@ -16,7 +16,7 @@ const getApiAndEmit = async socket => {
         const res = await axios.get(
             "https://secure-depths-88479.herokuapp.com/forms"
         ); // Getting the data from DarkSky
-        socket.emit("FromAPI", res.data); // Emitting a new message. It will be consumed by the client
+        socket.broadcast.emit("FromAPI", res.data); // Emitting a new message. It will be consumed by the client
     } catch (error) {
         console.error(`Error: ${error.code}`);
     }
